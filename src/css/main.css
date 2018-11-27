@@ -1,0 +1,40 @@
+/* Header Styling */
+.header {
+  height: 100px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+.header a {
+  color: #1c1c1c;
+  text-decoration: none;
+}
+.header .name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  align-self: center;
+}
+.header .navItems {
+  display: flex;
+  height: 100%;
+}
+.header .navItems .navItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 40px;
+  font-weight: 600;
+  align-self: center;
+  transition: 0.2s;
+}

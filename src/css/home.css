@@ -1,0 +1,39 @@
+#home {
+  width: 1200px;
+  margin: 0 auto;
+}
+#home .container {
+  background: rgb(49, 249, 141);
+  background: linear-gradient(
+    135deg,
+    rgba(49, 249, 141, 1) 0%,
+    rgba(64, 193, 248, 1) 100%
+  );
+  height: Calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+#home .container .heroContent {
+  text-align: center;
+}
+#home .container .heroContent h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+}
+#home .container .heroContent .heroDesc {
+  font-size: 20px;
+  margin-top: 20px;
+  color: white;
+}
+#home .container .workButton {
+  position: absolute;
+  bottom: 50px;
+}
+#home .container .workButton .toWork {
+  color: white;
+  text-decoration: none;
+}

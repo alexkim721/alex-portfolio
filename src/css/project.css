@@ -1,0 +1,63 @@
+#project .hero {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+#project .hero .mockup {
+  margin: auto !important;
+}
+#project .intro-container {
+  background-color: #fafafa;
+  height: 520px;
+  margin-top: 100vh;
+}
+#project .intro {
+  width: 1200px;
+  margin: auto;
+  padding: 110px 0;
+  align-self: center;
+  display: flex;
+  height: 350px;
+  justify-content: space-between;
+}
+#project .intro .left {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  height: 100%;
+  justify-content: space-between;
+}
+#project .intro .left .title {
+  font-size: 40px;
+  font-weight: 600;
+}
+#project .intro .left .desc {
+  line-height: 30px;
+  font-size: 16px;
+}
+#project .intro .left .links {
+  margin-bottom: 18px;
+}
+#project .intro .left .link {
+  color: white;
+  text-decoration: none;
+  padding: 18px 30px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 5px;
+}
+#project .intro .right {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+  justify-content: space-between;
+}
+#project .intro .right .item-title {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}

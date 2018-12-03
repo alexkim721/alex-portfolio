@@ -24,13 +24,13 @@ class Header extends Component {
   }
   onRouteChanged = () => {
     if (this.props.history.location.pathname.split("/")[1] === "work") {
-      console.log("hi");
       this.setState({
         linksdark: false
       });
     } else {
       this.setState({
-        linksdark: true
+        linksdark: true,
+        shrink: false
       });
     }
     if (this.props.history.location.pathname.split("/").length === 3) {
@@ -39,7 +39,8 @@ class Header extends Component {
       });
     } else {
       this.setState({
-        dark: true
+        dark: true,
+        shrink: false
       });
     }
   };

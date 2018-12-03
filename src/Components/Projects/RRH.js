@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Slider from "../Projects/Slider";
+import Slider from "./Slider";
 
-class Hid extends Component {
+class RRH extends Component {
   componentDidMount() {
     console.log(this.props);
   }
@@ -20,16 +20,13 @@ class Hid extends Component {
             <div className="projHeader">Problem Statement</div>
             <div className="projp">
               <p>
-                The homeless population is at an absurdly high number of over
-                500,000 people across the United States. Of that number, about
-                200,000 are unsheltered.
+                Hospitals are a stressful place and navigating the space can
+                cause a lot of problems to the visitor, the patient and the
+                hospital staff.
               </p>
               <p>
-                There is also a huge lack of sympathy towards the homeless
-                population because of certain stereotypes and misunderstanding
-                as well as public image and popular culture. Homeless people are
-                becoming dehumanized and people are starting to bat their eyes
-                without understanding what they do to survive and how to help.
+                With this in mind we thought about our individual experiences at
+                a hospital and thought of 4 major pain points as a visitor:
               </p>
             </div>
           </div>
@@ -120,9 +117,7 @@ class Hid extends Component {
             attaching faces and quotes to humanize them.
           </div>
           <div className="twocolum">
-            <div className="hidImage">
-              <Slider images={this.props.data.slider01} />
-            </div>
+            <div className="hidImage" />
             <div className="text">
               <div className="subHeader">State Selection</div>
               <div className="desc projp">
@@ -163,9 +158,7 @@ class Hid extends Component {
             </div>
           </div>
           <div className="twocolum">
-            <div className="hidImage">
-              <Slider images={this.props.data.slider02} />
-            </div>
+            <div className="hidImage" />
             <div className="text">
               <div className="subHeader">Filter by Demographic</div>
               <div className="desc projp">
@@ -223,4 +216,4 @@ class Hid extends Component {
   }
 }
 
-export default Hid;
+export default RRH;

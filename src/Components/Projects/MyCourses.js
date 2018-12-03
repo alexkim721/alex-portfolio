@@ -11,6 +11,12 @@ class MyCourses extends Component {
     };
     return style;
   };
+  bgcolor = () => {
+    const style = {
+      backgroundColor: this.props.data.color
+    };
+    return style;
+  };
 
   render() {
     return (
@@ -175,21 +181,13 @@ class MyCourses extends Component {
                 if they were to ever miss a class.
               </div>
             </div>
-            <div className="image">
-              <img
-                alt="grades solution"
-                src={require("../../images/MyCourses/grades-01.png")}
-                className="myC-Grades"
-              />
+            <div className="image myC-Grades">
+              <Slider images={this.props.data.gradesSlider} />
             </div>
           </div>
           <div className="twocolum">
-            <div className="image">
-              <img
-                alt="contact a professor solution"
-                src={require("../../images/MyCourses/contact-01.png")}
-                className="myC-Contact"
-              />
+            <div className="image myC-Contact">
+              <Slider images={this.props.data.contactSlider} />
             </div>
             <div className="text">
               <div className="subHeader">Contacting a Professor</div>
@@ -203,8 +201,12 @@ class MyCourses extends Component {
               </div>
             </div>
           </div>
-          <div className="mainTextWidth">
-            <Slider images={this.props.data.finalSlider} />
+          <div className="singlecolumn myc" style={this.bgcolor()}>
+            <img
+              alt="Final Comps"
+              src={require("../../images/MyCourses/final-screens.png")}
+              className="finalCompImg"
+            />
           </div>
           <div id="partfive" className="sections mainTextWidth">
             <div className="projHeader">Conclusion</div>

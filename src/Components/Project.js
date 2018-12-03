@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Hid from "../Components/Projects/HiddenbutnotHiding";
 import MyCourses from "../Components/Projects/MyCourses";
 import "../css/project.css";
+import RRH from "./Projects/RRH";
 
 class Project extends Component {
   heroStyle = () => {
@@ -19,8 +20,10 @@ class Project extends Component {
   checkContent = () => {
     if (this.props.data.title === "MyCourses") {
       return <MyCourses data={this.props.data} />;
-    } else {
+    } else if (this.props.data.title === "Hidden but not Hiding") {
       return <Hid data={this.props.data} />;
+    } else {
+      return <RRH data={this.props.data} />;
     }
   };
   render() {

@@ -13,8 +13,24 @@ const Projects = [
       "MyCourses is a website primarily used by students and professors to communicate between classes and exchange course materials throughout the school year. The platform also provides services that allow students to schedule appointments with their professors as well as take online quizzes and track their acedemic progress.",
     mockup: "mycourses-mockup.png",
     imageStyle: { height: "750px" },
-    finalSlider:
-      "../../images/MyCourses/Project 1 - Screens-01.png|img|../../images/MyCourses/Project 1 - Screens-02.png|img|../../images/MyCourses/Project 1 - Screens-03.png"
+    gradesSlider: [
+      require("../images/MyCourses/grades-01.png"),
+      require("../images/MyCourses/grades-02.png")
+    ],
+    contactSlider: [
+      require("../images/MyCourses/contact-01.png"),
+      require("../images/MyCourses/contact-02.png"),
+      require("../images/MyCourses/contact-03.png"),
+      require("../images/MyCourses/contact-04.png"),
+      require("../images/MyCourses/contact-05.png")
+    ],
+    finalSlider: [
+      require("../images/MyCourses/Project 1 - Screens-01.png"),
+      require("../images/MyCourses/Project 1 - Screens-04.png"),
+      require("../images/MyCourses/Project 1 - Screens-06.png"),
+      require("../images/MyCourses/Project 1 - Screens-12.png"),
+      require("../images/MyCourses/Project 1 - Screens-13.png")
+    ]
   },
   {
     title: "RRH Hospital",
@@ -54,7 +70,15 @@ const Projects = [
     duration: "Spring 2017",
     fulldesc: `Hidden but not Hiding is an interactive infographic that displays information about the homeless population in the US. The application addresses the population by dividing them into groups that can be filtered, down to the individual level. By showing both the numbers and the individual, I wanted to create an application that could foster more empathy for a community often overlooked.`,
     mockup: "hid-mockup.png",
-    imageStyle: { height: "350px", margin: "auto 70px" }
+    imageStyle: { height: "350px", margin: "auto 70px" },
+    slider01: [
+      require("../images/Hid/final-comps-03.png"),
+      require("../images/Hid/final-comps-04.png")
+    ],
+    slider02: [
+      require("../images/Hid/final-comps-06.png"),
+      require("../images/Hid/final-comps-07.png")
+    ]
   },
   {
     title: "AMAX",

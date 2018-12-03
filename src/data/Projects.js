@@ -12,7 +12,9 @@ const Projects = [
     fulldesc:
       "MyCourses is a website primarily used by students and professors to communicate between classes and exchange course materials throughout the school year. The platform also provides services that allow students to schedule appointments with their professors as well as take online quizzes and track their acedemic progress.",
     mockup: "mycourses-mockup.png",
-    imageStyle: { height: "750px" }
+    imageStyle: { height: "750px" },
+    finalSlider:
+      "../../images/MyCourses/Project 1 - Screens-01.png|img|../../images/MyCourses/Project 1 - Screens-02.png|img|../../images/MyCourses/Project 1 - Screens-03.png"
   },
   {
     title: "RRH Hospital",

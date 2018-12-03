@@ -4,45 +4,95 @@ import "../css/main.css";
 import { withRouter } from "react-router-dom";
 
 class Header extends Component {
-  headerStyle = () => {
-    const white = {
-      color: "white"
+  constructor() {
+    super();
+    this.state = {
+      shrink: false,
+      dark: true,
+      linksdark: true
     };
-    const black = {
-      color: "#1c1c1c"
-    };
-    return this.props.history.location.pathname === "/work" ? white : black;
-  };
-  headerColorShift = () => {
-    const white = {
-      color: "white"
-    };
-    const black = {
-      color: "#1c1c1c"
-    };
-    if (this.props.history.location.pathname.split("/").length === 2) {
-      return white;
+    this.boundScroll = this.wheelEvent.bind(this);
+  }
+  componentDidMount() {
+    document.addEventListener("wheel", this.boundScroll);
+    this.onRouteChanged();
+  }
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      this.onRouteChanged();
+    }
+  }
+  onRouteChanged = () => {
+    if (this.props.history.location.pathname.split("/")[1] === "work") {
+      console.log("hi");
+      this.setState({
+        linksdark: false
+      });
     } else {
-      return black;
+      this.setState({
+        linksdark: true
+      });
+    }
+    if (this.props.history.location.pathname.split("/").length === 3) {
+      this.setState({
+        dark: false
+      });
+    } else {
+      this.setState({
+        dark: true
+      });
+    }
+  };
+  wheelEvent = event => {
+    if (this.props.history.location.pathname.split("/").length === 3) {
+      if (window.scrollY <= window.innerHeight) {
+        this.setState({
+          shrink: false,
+          dark: false,
+          linksdark: false
+        });
+      } else if (window.scrollY >= window.innerHeight) {
+        this.setState({
+          shrink: true,
+          dark: true,
+          linksdark: true
+        });
+      }
+    }
+  };
+  headerClassControler = () => {
+    if (this.state.shrink) {
+      return "header shrink";
+    } else {
+      return "header";
     }
   };
 
   render() {
     return (
-      <div className="header">
+      <div className={this.headerClassControler()}>
         {console.log(this.props)}
-        <div className="container" style={this.headerColorShift()}>
-          <NavLink className="name" to="">
+        <div className="container">
+          <NavLink className={this.state.dark ? "name" : "name white"} to="">
             Alexander Kim
           </NavLink>
           <div className="navItems">
-            <NavLink className="navItem" to="/work" style={this.headerStyle()}>
+            <NavLink
+              className={this.state.linksdark ? "navItem" : "navItem white"}
+              to="/work"
+            >
               work
             </NavLink>
-            <NavLink className="navItem" to="/about" style={this.headerStyle()}>
+            <NavLink
+              className={this.state.linksdark ? "navItem" : "navItem white"}
+              to="/about"
+            >
               about
             </NavLink>
-            <NavLink className="navItem" to="" style={this.headerStyle()}>
+            <NavLink
+              className={this.state.linksdark ? "navItem" : "navItem white"}
+              to=""
+            >
               resume
             </NavLink>
           </div>

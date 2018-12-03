@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
-import { Switch, Route } from "react-router-dom";
 import Work from "./Components/Work";
 import About from "./Components/About";
 

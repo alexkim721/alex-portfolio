@@ -1,10 +1,11 @@
 /* Header Styling */
 .header {
   height: 100px;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 9999;
+  transition: 0.2s;
 }
 .header .container {
   max-width: 1200px;
@@ -24,6 +25,7 @@
   font-size: 18px;
   font-weight: 600;
   align-self: center;
+  transition: 0.2s;
 }
 .header .navItems {
   display: flex;
@@ -37,4 +39,11 @@
   font-weight: 600;
   align-self: center;
   transition: 0.2s;
+}
+.header .white {
+  color: white !important;
+}
+.header.shrink {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 60px;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import Hid from "../Components/Projects/HiddenbutnotHiding";
+import MyCourses from "../Components/Projects/MyCourses";
 import "../css/project.css";
 
 class Project extends Component {
@@ -15,10 +16,16 @@ class Project extends Component {
     };
     return style;
   };
+  checkContent = () => {
+    if (this.props.data.title === "MyCourses") {
+      return <MyCourses data={this.props.data} />;
+    } else {
+      return <Hid data={this.props.data} />;
+    }
+  };
   render() {
     return (
       <div id="project">
-        {console.log(this)}
         <div className="hero" style={this.heroStyle()}>
           <img
             className="mockup"
@@ -65,6 +72,7 @@ class Project extends Component {
             </div>
           </div>
         </div>
+        <div className="breakdown">{this.checkContent()}</div>
       </div>
     );
   }

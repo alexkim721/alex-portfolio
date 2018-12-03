@@ -26,7 +26,10 @@ class Work extends Component {
     });
   }
   componentDidUpdate() {
-    if (this.props.history.location.pathname === "/work") {
+    if (
+      this.props.history.location.pathname === "/work" ||
+      this.props.history.location.pathname === "/work/"
+    ) {
       document.addEventListener("wheel", this.boundScroll);
     } else {
       document.removeEventListener("wheel", this.boundScroll);
@@ -191,7 +194,6 @@ class Work extends Component {
   render() {
     return (
       <React.Fragment>
-        {console.log(this.state)}
         {/* <div className="main">
             <div className="number">01</div>
             <div className="title">MyCourses</div>

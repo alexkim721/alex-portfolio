@@ -29,39 +29,94 @@ class RRH extends Component {
                 a hospital and thought of 4 major pain points as a visitor:
               </p>
             </div>
+            <div className="fourList">
+              <div className="listItem">
+                <div className="itemNum" style={this.color()}>
+                  01
+                </div>
+                <div className="subHeader">In an emotional state</div>
+                <div className="itemContent">
+                  Patients and visitors experience stress and confusion when
+                  entering a hospital, resulting in emotionally charged actions.
+                </div>
+              </div>
+              <div className="listItem">
+                <div className="itemNum" style={this.color()}>
+                  02
+                </div>
+                <div className="subHeader">Complex navigation in hospital</div>
+                <div className="itemContent">
+                  Hospital spaces are complex and vary in size. This makes
+                  navigating a hospital extremely difficult even for a returning
+                  visitor, as pertinent information such as patient location and
+                  status are always updating.
+                </div>
+              </div>
+              <div className="listItem">
+                <div className="itemNum" style={this.color()}>
+                  03
+                </div>
+                <div className="subHeader">Not clear what to do next</div>
+                <div className="itemContent">
+                  During a hospital stay or visit, after checking in and
+                  navigating to an area, there is a disconnect when trying to
+                  navigate to the next location such as a bathroom or lounge.
+                </div>
+              </div>
+              <div className="listItem">
+                <div className="itemNum" style={this.color()}>
+                  04
+                </div>
+                <div className="subHeader">Not having patient information</div>
+                <div className="itemContent">
+                  As a visitor, knowing where the person you’re visiting is
+                  located and their current status is critical. There is
+                  currently no optimized communication link between patient and
+                  visitor.
+                </div>
+              </div>
+            </div>
           </div>
           <div id="parttwo" className="sections">
             <div className="projHeader mainTextWidth">Research</div>
             <div className="projp mainTextWidth">
               <p>
-                My topic revolved on demographic information so I primarily
-                directed my research on how people responded to graphs and
-                charts. I also wanted a better understanding on how the general
-                public viewed the homeless and what makes a person want to help.
+                After putting together our research direction based on the four
+                major pain points we identified, we decided to research the
+                hospital setting as a whole. We interviewed hospital
+                administration and their biggest issue they found was visitors
+                asking this question:
               </p>
+              <div className="coloredHeader" style={this.color()}>
+                "Where do I go?"
+              </div>
               <p>
-                After gathering information on my subject matter, I found as I
-                was looking through all of these number graphs and charts, there
-                was never any mention about any homeless person as an
-                individual. They were always covered by a generalized blanket
-                statement, treating them as statistics rather than human beings.
+                Based on that statement we decided to limit our scope to a
+                visitor who is coming to see a patient, rather than an entire
+                slew of user types.
               </p>
+              {/*user flows/user types*/}
               <p>
-                From this, I created 3 main goals I wanted to accomplish with
-                the app:
+                We also found that hospitals also run like a business as well.
+                For starters, hospitals are required to keep certain information
+                private about patients in order to abide to HIPAA laws. Using an
+                AR in this kind of setting brings up an awkward conversation
+                about privacy protection. Hospitals also need money and thus,
+                desire benefits that come in through these kinds of
+                applications.
               </p>
             </div>
-            <div className="threegrid">
+            <div className="fourgrid rrhgrid">
               <div className="item">
                 <div className="image">
                   <img
                     alt="Goal 01"
-                    src={require("../../images/Hid/goal-01.png")}
+                    src={require("../../images/RRH/onboarding-01.png")}
                   />
                 </div>
                 <div className="text">
-                  <div className="projp">
-                    Educate the user on the large homeless population
+                  <div className="projp" style={this.color()}>
+                    Lessen emotional stress
                   </div>
                 </div>
               </div>
@@ -69,12 +124,12 @@ class RRH extends Component {
                 <div className="image">
                   <img
                     alt="Goal 02"
-                    src={require("../../images/Hid/goal-02.png")}
+                    src={require("../../images/RRH/onboarding-04.png")}
                   />
                 </div>
                 <div className="text">
-                  <div className="projp">
-                    Foster more empathy for the homeless and humanize them
+                  <div className="projp" style={this.color()}>
+                    Bring benefits to the hospital
                   </div>
                 </div>
               </div>
@@ -82,30 +137,72 @@ class RRH extends Component {
                 <div className="image">
                   <img
                     alt="Goal 03"
-                    src={require("../../images/Hid/goal-03.png")}
+                    src={require("../../images/RRH/onboarding-02.png")}
                   />
                 </div>
                 <div className="text">
-                  <div className="projp">Suggest ways for the user to help</div>
+                  <div className="projp" style={this.color()}>
+                    Inform visitors during a visit
+                  </div>
                 </div>
               </div>
+              <div className="item">
+                <div className="image">
+                  <img
+                    alt="Goal 04"
+                    src={require("../../images/RRH/onboarding-03.png")}
+                  />
+                </div>
+                <div className="text">
+                  <div className="projp" style={this.color()}>
+                    Communicate with patient
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="projp mainTextWidth">
+              Once all of our research had set us in a solid direction, we
+              decided to move onto our user flows. We had a basic idea on how we
+              wanted to present our app and created two flow that showed off the
+              main essence of our project.
+            </div>
+            <div className="subHeader rrhflow mainTextWidth">
+              User Flow 01: Onboarding
+            </div>
+            <div className="singlecolumn rrh">
+              <img
+                alt="user flow 1"
+                src={require("../../images/RRH/flow-01.png")}
+                className="mainTextWidth"
+              />
+            </div>
+            <div className="subHeader mainTextWidth">
+              User Flow 02: Navigating
+            </div>
+            <div className="singlecolumn rrh">
+              <img
+                alt="user flow 2"
+                src={require("../../images/RRH/flow-02.png")}
+                className="mainTextWidth"
+              />
             </div>
           </div>
           <div id="partthree" className="sections mainTextWidth">
             <div className="projHeader">Design</div>
             <div className="projp">
-              The design direction initially focused on the dark and gritty. I
-              tried to hone the mood by using strong imagery, however it began
-              to detract from the final goal which was to inform the user.
-              Afterwards, I pulled away from all illustrations and tried to
-              focus more on bringing the graphs and data alive. I represented
-              each person as a dot, similarly to how society views them as just
-              numbers, and told their story through layers of exploration.
+              We wanted our designs to calm a user with playful interactions and
+              illustrations without going too far and making it look childish.
+              We used very simple illustrations that visualized the onboarding
+              process and set an initial mood for the app. From there,
+              simplified illustrations were used for other call outs to further
+              balance the mood. We went for a monochromatic design to create a
+              simple and easy to view UI with rounded boxes and circular buttons
+              to further the friendliness of the app.
             </div>
-            <div className="singlecolumn">
+            <div className="singlecolumn rrh">
               <img
                 alt="boards"
-                src={require("../../images/Hid/boards-02.png")}
+                src={require("../../images/RRH/styleboards-01.png")}
               />
             </div>
           </div>

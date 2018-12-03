@@ -72,7 +72,6 @@ class Header extends Component {
   render() {
     return (
       <div className={this.headerClassControler()}>
-        {console.log(this.props)}
         <div className="container">
           <NavLink className={this.state.dark ? "name" : "name white"} to="">
             Alexander Kim

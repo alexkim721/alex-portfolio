@@ -20,11 +20,24 @@ class Work extends Component {
   componentDidMount() {
     document.addEventListener("wheel", this.boundScroll);
 
+    this.reOrder();
     this.setState({
-      data: Projects,
+      data: this.reOrder(),
       loading: false
     });
   }
+  reOrder() {
+    let projOrder = [];
+    for (let i = 1; i < Projects.length + 1; i++) {
+      projOrder.push(
+        Projects.filter(obj => {
+          return obj.order === i;
+        })
+      );
+    }
+    return projOrder;
+  }
+
   componentDidUpdate() {
     if (
       this.props.history.location.pathname === "/work" ||
@@ -69,26 +82,32 @@ class Work extends Component {
   lineAnim = () => {
     let style = {
       marginLeft: this.state.project * 80,
-      backgroundColor: this.state.data[this.state.project].color
+      backgroundColor: this.state.data[this.state.project][0].color
     };
     return style;
   };
   renderProject = () => {
     let buttonColor = {
-      backgroundColor: this.state.data[this.state.project].color
+      backgroundColor: this.state.data[this.state.project][0].color
     };
 
     return (
       <div className="main">
         <div className="number">
-          {"0" + this.state.data[this.state.project].order}
+          {"0" + this.state.data[this.state.project][0].order}
         </div>
-        <div className="title">{this.state.data[this.state.project].title}</div>
-        <div className="desc">{this.state.data[this.state.project].desc}</div>
-        <div className="role">{this.state.data[this.state.project].role}</div>
+        <div className="title">
+          {this.state.data[this.state.project][0].title}
+        </div>
+        <div className="desc">
+          {this.state.data[this.state.project][0].desc}
+        </div>
+        <div className="role">
+          {this.state.data[this.state.project][0].role}
+        </div>
         <NavLink
           className="button"
-          to={`/work/${this.state.data[this.state.project].slug}`}
+          to={`/work/${this.state.data[this.state.project][0].slug}`}
           style={buttonColor}
         >
           view project
@@ -98,19 +117,19 @@ class Work extends Component {
   };
   renderImage = () => {
     let bgColor = {
-      backgroundColor: this.state.data[this.state.project].color
+      backgroundColor: this.state.data[this.state.project][0].color
     };
     // let imageStyle = {
-    //   height: this.state.data[this.state.project].imageStyle
+    //   height: this.state.data[0][this.state.project].imageStyle
     // };
     return (
       <div className="image" style={bgColor}>
         <img
           className="mockup"
-          alt={this.state.data[this.state.project].title}
-          style={this.state.data[this.state.project].imageStyle}
+          alt={this.state.data[this.state.project][0].title}
+          style={this.state.data[this.state.project][0].imageStyle}
           src={require(`../images/${
-            this.state.data[this.state.project].mockup
+            this.state.data[this.state.project][0].mockup
           }`)}
         />
       </div>
@@ -118,10 +137,10 @@ class Work extends Component {
   };
   handlePathChange = path => {
     const slugs = [];
-    this.state.data.map(item => slugs.push(item.slug));
+    this.state.data.map(item => slugs.push(item[0].slug));
     const firstPart = path.split("/")[2];
     if (slugs.includes(firstPart)) {
-      return <Project data={this.state.data[slugs.indexOf(firstPart)]} />;
+      return <Project data={this.state.data[slugs.indexOf(firstPart)][0]} />;
     } else {
       return (
         <div id="work">

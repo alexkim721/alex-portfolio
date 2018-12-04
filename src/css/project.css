@@ -203,6 +203,23 @@
 #project .container .singlecolumn img.mainTextWidth {
   width: 700px;
 }
+#project .container .iphoneMock {
+  width: 300px;
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 150px;
+}
+#project .container .iphoneMock .iphone {
+  position: absolute;
+  width: 100%;
+}
+#project .container .iphoneMock video.phone {
+  width: 83%;
+  margin-left: 1%;
+  margin-top: -2%;
+}
 
 /* Slider Styles*/
 
@@ -330,4 +347,16 @@
 #project .container .singlecolumn.rrh img {
   margin-top: 30px;
   margin-bottom: 100px;
+}
+#project .container .singlecolumn.rrhpitch {
+  padding: 100px 0;
+  margin: 100px 0;
+}
+#project .container .pitchVidRRH {
+  width: 1200px;
+  margin: 0 auto;
+}
+#project .container .pitchVidRRH video {
+  width: 100%;
+  margin: 0;
 }

@@ -11,6 +11,12 @@ class RRH extends Component {
     };
     return style;
   };
+  bgcolor = () => {
+    const style = {
+      backgroundColor: this.props.data.color
+    };
+    return style;
+  };
 
   render() {
     return (
@@ -209,81 +215,121 @@ class RRH extends Component {
           <div id="partfour" className="sections" />
           <div className="projHeader mainTextWidth">Solutions</div>
           <div className="projp mainTextWidth">
-            I wanted to create an interactive application that shows how large
-            the homeless demographic really is in the United States while
-            attaching faces and quotes to humanize them.
+            Our main goal was to simplify navigating a hospital while fostering
+            a friendlier vibe for the user. Using fun and simple animations
+            while keeping in mind where UI lived in the space, we were able to
+            create an enjoyable navigation experience.
           </div>
-          <div className="twocolum">
-            <div className="hidImage" />
-            <div className="text">
-              <div className="subHeader">State Selection</div>
-              <div className="desc projp">
-                Hidden but not Hiding allows the user to select a specific state
-                to explore while giving some general statistics that can be
-                easily compared through visualization. By default, the
-                application will detect the users current location and
-                automatically select their current state. I wanted to go for
-                this specific look because of the impact certain states have
-                because of the sheer volume of homeless people within.
-              </div>
-            </div>
-          </div>
-          <div className="twocolum">
-            <div className="text">
-              <div className="subHeader">State Hub</div>
-              <div className="desc projp">
-                <p>
-                  With-in each state, I changed the orientation of the dots to
-                  encompass the main meat of the statistics and that was the
-                  total number of homeless people in the state. On the left bar,
-                  it gives a total population and a generalized statistic that
-                  gives a better comparison of the homeless population in
-                  relation to the total population.
-                </p>
-                <p>
-                  There are also several calls to action that gives the user
-                  options to explore further on their own.
-                </p>
-              </div>
-            </div>
-            <div className="hidimage">
-              <img
-                alt="community solution"
-                src={require("../../images/Hid/final-comps-05.png")}
-                className="myC-Grades"
+          <div className="singlecolumn rrhpitch" style={this.bgcolor()}>
+            <div className="pitchVidRRH">
+              <video
+                src={require("../../images/RRH/final-pitch-vid.mp4")}
+                type="video/mp4"
+                controls
               />
             </div>
           </div>
           <div className="twocolum">
-            <div className="hidImage" />
+            <div className="iphoneMock">
+              <img
+                alt="iphone mock"
+                src={require("../../images/iphone-mock.png")}
+                className="iphone"
+              />
+              <video
+                src={require("../../images/RRH/onboarding-vid.mp4")}
+                type="video/mp4"
+                className="phone"
+                loop
+                controls
+              />
+            </div>
             <div className="text">
-              <div className="subHeader">Filter by Demographic</div>
+              <div className="subHeader">Onboarding</div>
               <div className="desc projp">
-                The demographic page generates its statistical data from the
-                population of the currently selected state. By adding filters, a
-                person can further explore the population through layers of
-                exploration. I wanted to allow the user to see how certain
-                social factors relate to homelessness, such as LGBTQ and gender
-                identity.
+                The introduction to the app should be simple, friendly and not
+                overwhelming. By on boarding the user from the start, we are
+                giving the user information about the application as well as a
+                simplified instruction on what to do after downloading the app.
+                This way the user wont download the app and get confused on what
+                to do next.
               </div>
             </div>
           </div>
           <div className="twocolum">
             <div className="text">
-              <div className="subHeader">Community</div>
+              <div className="subHeader">Patient Status</div>
               <div className="desc projp">
-                One of the main features I wanted to highlight was the community
-                page because of its importance to the application’s goal. The
-                user would be allowed to flip through actual people and see
-                their face as well as a small quote by them. This creates a
-                greater personal connection while looking at their faces.
+                The user will always have quick access to the patients status by
+                entering a menu on the bottom. With that information on their
+                fingertips, they can quickly deduce where their patient is and
+                their current status as well as personalized information of the
+                visitor, such as parking information and available coupons
+                available for use.
               </div>
             </div>
-            <div className="hidimage">
+            <div className="iphoneMock">
               <img
-                alt="community solution"
-                src={require("../../images/Hid/final-comps-08.png")}
-                className="myC-Grades"
+                alt="iphone mock"
+                src={require("../../images/iphone-mock.png")}
+                className="iphone"
+              />
+              <video
+                src={require("../../images/RRH/patient-status-vid.mp4")}
+                type="video/mp4"
+                className="phone"
+                loop
+                controls
+              />
+            </div>
+          </div>
+          <div className="twocolum">
+            <div className="iphoneMock">
+              <img
+                alt="iphone mock"
+                src={require("../../images/iphone-mock.png")}
+                className="iphone"
+              />
+              <video
+                src={require("../../images/RRH/navigate-vid.mp4")}
+                type="video/mp4"
+                className="phone"
+                loop
+                controls
+              />
+            </div>
+            <div className="text">
+              <div className="subHeader">Alternative Destinations</div>
+              <div className="desc projp">
+                The user will always have control on where they are going. There
+                will be an option that will allow for the user to explore other
+                locations with-in the hospital, whether it be the nearest
+                cafeteria or bathroom. Then it will automatically reroute the
+                user to the selected destination.
+              </div>
+            </div>
+          </div>
+          <div className="twocolum">
+            <div className="text">
+              <div className="subHeader">User Incentives</div>
+              <div className="desc projp">
+                Throughout the visit users will be provided with coupons to
+                further enhance their hospital experience. This will also give a
+                user a desire to download and use the app.
+              </div>
+            </div>
+            <div className="iphoneMock">
+              <img
+                alt="iphone mock"
+                src={require("../../images/iphone-mock.png")}
+                className="iphone"
+              />
+              <video
+                src={require("../../images/RRH/user-incentive-vid.mp4")}
+                type="video/mp4"
+                className="phone"
+                loop
+                controls
               />
             </div>
           </div>
@@ -294,16 +340,16 @@ class RRH extends Component {
             <div className="projHeader">Conclusion</div>
             <div className="projp">
               <p>
-                As someone who has experienced homelessness first hand, I put a
-                lot of time and thought into the application. The main take away
-                was to understand the homeless on a personal level and maybe
-                even want to volunteer to help or even just meet with these
-                people.
+                I think that everyone can agree that visiting a hospital is
+                stressful. By creating this application, I wanted to understand
+                that process better and try to create an experience that is more
+                enjoyable. It also allowed me to practice my UI animation and
+                prototyping.
               </p>
               <p>
-                Through the research process I was able to learn more about the
-                individual lives of the homeless and also get a better
-                understanding on each of their circumstances.
+                None of this would have been possible without my teammates
+                Madison Yocum and Victoria Bragg so swing by their portfolio to
+                see their work!
               </p>
             </div>
           </div>

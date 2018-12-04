@@ -42,8 +42,10 @@ const Projects = [
     slug: "rochester-regional-health",
     client: "School Project",
     duration: "Fall 2018",
-    mockup: "mycourses-mockup.png",
-    imageStyle: { height: "750px" }
+    fulldesc:
+      "Rochester Regional Health Hospital requested to do a collaborative project with RIT and my senior class was given the task of fulfilling their needs. They wanted an AR navigation system that would allow visitors to get to specific areas of the hospital with as little friction as possible. My team was called team ROAM and consisted of two other amazing designers: Madison Yocum and Victoria Bragg.",
+    mockup: "rrh-mockup.png",
+    imageStyle: { height: "500px", margin: "auto" }
   },
   {
     title: "Asian Culture Society",

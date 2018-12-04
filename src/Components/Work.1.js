@@ -12,22 +12,20 @@ class Work extends Component {
       project: 0,
       gridToggle: false,
       data: [],
-      loading: true,
-      scrollable: true
+      loading: true
     };
     this.boundScroll = this.wheelEvent.bind(this);
-    // this.scroll
   }
 
   componentDidMount() {
     document.addEventListener("wheel", this.boundScroll);
 
+    this.reOrder();
     this.setState({
       data: this.reOrder(),
       loading: false
     });
   }
-
   reOrder() {
     let projOrder = [];
     for (let i = 1; i < Projects.length + 1; i++) {
@@ -39,8 +37,12 @@ class Work extends Component {
     }
     return projOrder;
   }
+
   componentDidUpdate() {
-    if (this.props.history.location.pathname === "/work") {
+    if (
+      this.props.history.location.pathname === "/work" ||
+      this.props.history.location.pathname === "/work/"
+    ) {
       document.addEventListener("wheel", this.boundScroll);
     } else {
       document.removeEventListener("wheel", this.boundScroll);
@@ -49,44 +51,26 @@ class Work extends Component {
   componentWillUnmount() {
     document.removeEventListener("wheel", this.boundScroll);
   }
-  countUp = () => {
-    if (this.state.project === 4) {
-      this.setState({
-        project: 0
-      });
-    } else {
-      this.setState({
-        project: this.state.project + 1
-      });
-    }
-    this.delayWheelReset();
-  };
-  countDown = () => {
-    if (this.state.project === 0) {
-      this.setState({
-        project: 4
-      });
-    } else {
-      this.setState({
-        project: this.state.project - 1
-      });
-    }
-    this.delayWheelReset();
-  };
-  delayWheelReset = () => {
-    this.setState({
-      scrollable: false
-    });
-    setTimeout(() => {
-      this.setState({ scrollable: true });
-    }, 500);
-  };
   wheelEvent = event => {
-    if (this.state.scrollable) {
-      if (event.deltaY > 75) {
-        this.countUp();
-      } else if (event.deltaY < -75) {
-        this.countDown();
+    if (event.deltaY > 0) {
+      if (this.state.project === 4) {
+        this.setState({
+          project: 0
+        });
+      } else {
+        this.setState({
+          project: this.state.project + 1
+        });
+      }
+    } else if (event.deltaY < 0) {
+      if (this.state.project === 0) {
+        this.setState({
+          project: 4
+        });
+      } else {
+        this.setState({
+          project: this.state.project - 1
+        });
       }
     }
   };
@@ -136,7 +120,7 @@ class Work extends Component {
       backgroundColor: this.state.data[this.state.project][0].color
     };
     // let imageStyle = {
-    //   height: this.state.data[this.state.project][0].imageStyle
+    //   height: this.state.data[0][this.state.project].imageStyle
     // };
     return (
       <div className="image" style={bgColor}>
@@ -229,7 +213,6 @@ class Work extends Component {
   render() {
     return (
       <React.Fragment>
-        {console.log(this.state)}
         {/* <div className="main">
             <div className="number">01</div>
             <div className="title">MyCourses</div>

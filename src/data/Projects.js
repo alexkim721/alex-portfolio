@@ -72,7 +72,11 @@ const Projects = [
     duration: "Spring 2017",
     fulldesc: `Hidden but not Hiding is an interactive infographic that displays information about the homeless population in the US. The application addresses the population by dividing them into groups that can be filtered, down to the individual level. By showing both the numbers and the individual, I wanted to create an application that could foster more empathy for a community often overlooked.`,
     mockup: "hid-mockup.png",
-    imageStyle: { height: "350px", margin: "auto 70px" },
+    imageStyle: {
+      height: "450px",
+      margin: "auto 70px",
+      boxShadow: "0px 10px 20px -2px rgba(0,0,0,0.75)"
+    },
     slider01: [
       require("../images/Hid/final-comps-03.png"),
       require("../images/Hid/final-comps-04.png")

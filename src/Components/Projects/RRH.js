@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Slider from "./Slider";
 
 class RRH extends Component {
   componentDidMount() {

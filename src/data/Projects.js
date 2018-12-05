@@ -75,7 +75,8 @@ const Projects = [
     imageStyle: {
       height: "450px",
       margin: "auto 70px",
-      boxShadow: "0px 10px 20px -2px rgba(0,0,0,0.75)"
+      boxShadow: "0px 10px 20px -2px rgba(0,0,0,0.4)",
+      borderRadius: "20px"
     },
     slider01: [
       require("../images/Hid/final-comps-03.png"),

@@ -1,5 +1,5 @@
 #work {
-  width: 1200px;
+  width: 1280px;
   margin: 100px auto 0;
   height: Calc(100vh - 100px);
 }
@@ -12,8 +12,21 @@
 }
 
 #work .main {
-  width: 490px;
   margin-bottom: 105px;
+  overflow: hidden;
+}
+#work .main .projectContainer {
+  position: relative;
+  width: 490px;
+  margin-left: 40px;
+  transition: 0.5s;
+}
+#work .main .project {
+  height: Calc(100vh - 205px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.5s;
 }
 
 #work .main .number {
@@ -21,79 +34,35 @@
   font-weight: 600;
   opacity: 0.1;
   position: absolute;
-  margin: -75px 0 0 -40px;
+  margin: -145px 0 0 -40px;
 }
 #work .main .title {
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 40px;
+  opacity: 0;
 }
 #work .main .desc {
   line-height: 32px;
+  opacity: 0;
 }
 #work .main .role {
   margin-top: 20px;
   font-size: 18px;
   font-weight: 500;
-  margin-bottom: 70px;
+  margin-bottom: 53px;
+  opacity: 0;
 }
 #work .main .button {
   text-decoration: none;
   padding: 15px 40px;
-  margin: 30px 0;
+  margin-top: -32px;
   font-weight: 600;
   color: white;
   letter-spacing: 1px;
   border-radius: 5px;
-}
-#work .footerNav {
-  position: absolute;
-  bottom: 0;
-  background-color: #f5f5f5;
-  width: 100vw;
-  left: 0;
-  height: 105px;
-}
-#work .footerNav .width {
-  width: 1200px;
-  margin: 0 auto;
-  height: 100%;
-}
-#work .footerNav .container {
-  width: 50vw;
-  max-width: 690px;
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
-}
-#work .footerNav .grid {
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  align-self: center;
-}
-#work .footerNav .projects {
-  display: flex;
-  height: 100%;
-  position: relative;
-}
-#work .footerNav .projects .num.first {
-  margin-left: 0;
-}
-#work .footerNav .projects .num {
-  margin-left: 60px;
-  align-self: center;
-  cursor: pointer;
-  width: 20px;
-  text-align: center;
-  color: #1c1c1c;
-}
-#work .footerNav .projects #underline {
-  height: 5px;
-  width: 20px;
-  position: absolute;
-  margin-top: 70px;
-  transition: 0.3s;
+  opacity: 0;
+  display: inline-block;
 }
 #work .image {
   width: 40vw;
@@ -105,4 +74,105 @@
   transition: 0.5s;
   overflow: hidden;
   display: flex;
+}
+
+/* footer styling */
+
+#work .footerNav {
+  transition: 0.5s;
+}
+#work .footerNav .gridContainer {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20px;
+}
+#work .footerNav .grid {
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  align-self: center;
+  transition: 0.5s;
+  position: absolute;
+}
+#work .footerNav .container {
+  transition: 0.5s;
+}
+#work .footerNav .projects {
+  transition: 0.5s;
+  z-index: 10;
+}
+
+/* footer large */
+#work .footerNav.large {
+  bottom: 0;
+  background-color: #f5f5f5;
+  width: 100vw;
+  left: 0;
+  height: 100vh;
+  position: absolute;
+}
+#work .footerNav.large .grid {
+  position: absolute;
+  align-self: auto;
+  top: 100px;
+}
+#work .footerNav.large .width {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+#work .footerNav.large .container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+/* footer small */
+#work .footerNav.small {
+  position: absolute;
+  bottom: 0;
+  background-color: #f5f5f5;
+  width: 100vw;
+  left: 0;
+  height: 105px;
+}
+#work .footerNav.small .width {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+#work .footerNav.small .container {
+  width: 50vw;
+  max-width: 690px;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+#work .footerNav.small .projects {
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+#work .footerNav.small .projects .num.first {
+  margin-left: 0;
+}
+#work .footerNav.small .projects .num {
+  margin-left: 60px;
+  align-self: center;
+  cursor: pointer;
+  width: 20px;
+  text-align: center;
+  color: #1c1c1c;
+}
+#work .footerNav.small .projects #underline {
+  height: 5px;
+  width: 20px;
+  position: absolute;
+  margin-top: 70px;
+  transition: 0.3s;
 }

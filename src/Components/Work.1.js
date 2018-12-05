@@ -3,14 +3,13 @@ import "../css/work.css";
 import { NavLink, withRouter } from "react-router-dom";
 import Projects from "../data/Projects";
 import Project from "./Project";
-import { projectIntro, projectOutro } from "../utils/animation";
 // import { TweenMax, Power3 } from "gsap";
 
 class Work extends Component {
   constructor() {
     super();
     this.state = {
-      project: null,
+      project: 0,
       gridToggle: true,
       data: [],
       loading: true,
@@ -25,8 +24,7 @@ class Work extends Component {
 
     this.setState({
       data: this.reOrder(),
-      loading: false,
-      project: 0
+      loading: false
     });
   }
 
@@ -41,16 +39,11 @@ class Work extends Component {
     }
     return projOrder;
   }
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate() {
     if (this.props.history.location.pathname === "/work") {
       document.addEventListener("wheel", this.boundScroll);
     } else {
       document.removeEventListener("wheel", this.boundScroll);
-    }
-
-    if (prevState.project !== this.state.project) {
-      projectIntro();
-      projectOutro();
     }
   }
   componentWillUnmount() {
@@ -110,49 +103,31 @@ class Work extends Component {
     return style;
   };
   renderProject = () => {
-    return (
-      <div
-        className="projectContainer"
-        style={{
-          marginTop: this.state.project * (window.innerHeight - 205) * -1
-        }}
-      >
-        {this.state.data.map(project => {
-          return (
-            <div
-              className={`project project${project[0].order}`}
-              key={`project${this.state.data.indexOf(project)}`}
-              style={
-                project[0].order === this.state.project + 2
-                  ? {
-                      marginTop: -240
-                    }
-                  : {}
-              }
-            >
-              <div className="number">{"0" + project[0].order}</div>
-              <div
-                className={
-                  this.state.project + 1 === project[0].order
-                    ? "projectText active"
-                    : "projectText hide"
-                }
-              >
-                <div className="title">{project[0].title}</div>
+    let buttonColor = {
+      backgroundColor: this.state.data[this.state.project][0].color
+    };
 
-                <div className="desc">{project[0].desc}</div>
-                <div className="role">{project[0].role}</div>
-                <NavLink
-                  className="button"
-                  to={`/work/${project[0].slug}`}
-                  style={{ backgroundColor: project[0].color }}
-                >
-                  view project
-                </NavLink>
-              </div>
-            </div>
-          );
-        })}
+    return (
+      <div className="main">
+        <div className="number">
+          {"0" + this.state.data[this.state.project][0].order}
+        </div>
+        <div className="title">
+          {this.state.data[this.state.project][0].title}
+        </div>
+        <div className="desc">
+          {this.state.data[this.state.project][0].desc}
+        </div>
+        <div className="role">
+          {this.state.data[this.state.project][0].role}
+        </div>
+        <NavLink
+          className="button"
+          to={`/work/${this.state.data[this.state.project][0].slug}`}
+          style={buttonColor}
+        >
+          view project
+        </NavLink>
       </div>
     );
   };
@@ -186,11 +161,7 @@ class Work extends Component {
       return (
         <div id="work">
           <div className="content">
-            {this.state.loading ? (
-              <div>loading</div>
-            ) : (
-              <div className="main"> {this.renderProject()} </div>
-            )}
+            {this.state.loading ? <div>loading</div> : this.renderProject()}
             <div
               className={
                 this.state.gridToggle === true

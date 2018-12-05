@@ -332,8 +332,11 @@ class RRH extends Component {
               />
             </div>
           </div>
-          <div className="mainTextWidth">
-            {/* <Slider images={this.props.data.finalSlider} /> */}
+          <div className="singlecolumn" style={this.bgcolor()}>
+            <img
+              alt="boards"
+              src={require("../../images/RRH/final-comps.png")}
+            />
           </div>
           <div id="partfive" className="sections mainTextWidth">
             <div className="projHeader">Conclusion</div>

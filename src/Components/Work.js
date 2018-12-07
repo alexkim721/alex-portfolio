@@ -60,7 +60,10 @@ class Work extends Component {
     return projOrder;
   }
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.history.location.pathname === "/work") {
+    if (
+      this.props.history.location.pathname.split("/")[1] === "work" &&
+      !this.state.onCaseStudy
+    ) {
       document.addEventListener("wheel", this.boundScroll);
     } else {
       document.removeEventListener("wheel", this.boundScroll);
@@ -219,6 +222,12 @@ class Work extends Component {
           didMount={this.projectDidMount}
         />
       );
+    } else if (
+      !slugs.includes(firstPart) &&
+      path.split("/").length > 2 &&
+      path.split("/")[2] !== ""
+    ) {
+      return <div>doesnt exist</div>;
     } else {
       console.log(this.state.gridToggle);
       return (

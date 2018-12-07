@@ -3,7 +3,15 @@ import "../css/work.css";
 import { NavLink, withRouter } from "react-router-dom";
 import Projects from "../data/Projects";
 import Project from "./Project";
-import { projectIntro, projectOutro } from "../utils/animation";
+import {
+  projectIntro,
+  projectOutro,
+  projectListIntro,
+  projectListOutro
+} from "../utils/animation";
+import ProjectNav from "./ProjectNav";
+import ProjectNavExpanded from "./ProjectNavExpanded";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 // import { TweenMax, Power3 } from "gsap";
 
 class Work extends Component {
@@ -14,7 +22,8 @@ class Work extends Component {
       gridToggle: true,
       data: [],
       loading: true,
-      scrollable: true
+      scrollable: true,
+      onCaseStudy: false
     };
     this.boundScroll = this.wheelEvent.bind(this);
     // this.scroll
@@ -48,8 +57,20 @@ class Work extends Component {
       document.removeEventListener("wheel", this.boundScroll);
     }
 
+    const { onCaseStudy } = this.state;
+
+    if (onCaseStudy !== prevState.onCaseStudy) {
+      if (!onCaseStudy) {
+        const imageStyle = this.state.data[this.state.project][0].imageStyle;
+        const mockup = this.state.data[this.state.project][0].mockup;
+        projectIntro({ mockup, imageStyle });
+      }
+      //add logic to change state
+    }
+
     if (prevState.project !== this.state.project) {
-      projectIntro();
+      const { mockup, imageStyle } = this.state.data[this.state.project][0];
+      projectIntro({ mockup, imageStyle });
       projectOutro();
     }
   }
@@ -86,7 +107,7 @@ class Work extends Component {
     });
     setTimeout(() => {
       this.setState({ scrollable: true });
-    }, 500);
+    }, 750);
   };
   wheelEvent = event => {
     if (this.state.scrollable) {
@@ -102,13 +123,16 @@ class Work extends Component {
       project: num
     });
   };
-  lineAnim = () => {
-    let style = {
-      marginLeft: this.state.project * 80,
-      backgroundColor: this.state.data[this.state.project][0].color
-    };
-    return style;
+  toggleGrid = () => {
+    this.setState({
+      gridToggle: this.state.gridToggle === true ? false : true,
+      scrollable: this.state.gridToggle === true ? false : true
+    });
   };
+  projectDidMount = toggle => {
+    this.setState({ onCaseStudy: toggle });
+  };
+
   renderProject = () => {
     return (
       <div
@@ -164,25 +188,30 @@ class Work extends Component {
     //   height: this.state.data[this.state.project][0].imageStyle
     // };
     return (
-      <div className="image" style={bgColor}>
+      <div id="mockup-wrapper" className="image" style={bgColor}>
         <img
           className="mockup"
           alt={this.state.data[this.state.project][0].title}
-          style={this.state.data[this.state.project][0].imageStyle}
-          src={require(`../images/${
-            this.state.data[this.state.project][0].mockup
-          }`)}
         />
       </div>
     );
+  };
+  delayImage = path => {
+    return require(`../images/${path}`);
   };
   handlePathChange = path => {
     const slugs = [];
     this.state.data.map(item => slugs.push(item[0].slug));
     const firstPart = path.split("/")[2];
     if (slugs.includes(firstPart)) {
-      return <Project data={this.state.data[slugs.indexOf(firstPart)][0]} />;
+      return (
+        <Project
+          data={this.state.data[slugs.indexOf(firstPart)][0]}
+          didMount={this.projectDidMount}
+        />
+      );
     } else {
+      console.log(this.state.gridToggle);
       return (
         <div id="work">
           <div className="content">
@@ -191,6 +220,7 @@ class Work extends Component {
             ) : (
               <div className="main"> {this.renderProject()} </div>
             )}
+
             <div
               className={
                 this.state.gridToggle === true
@@ -199,71 +229,30 @@ class Work extends Component {
               }
             >
               <div className="width">
-                <div className="gridContainer">
-                  <div
-                    className="grid"
-                    onClick={() => {
-                      this.setState({
-                        gridToggle:
-                          this.state.gridToggle === true ? false : true
-                      });
-                    }}
+                <CSSTransition
+                  onEnter={projectListIntro}
+                  onExit={projectListOutro}
+                  timeout={1000}
+                  classNames="fade"
+                  in={!this.state.gridToggle}
+                >
+                  <ProjectNavExpanded
+                    projNum={this.state.project}
+                    data={this.state.data}
+                    selectProject={this.selectProject}
                   />
-                </div>
-                <div className="container">
-                  <div className="projects">
-                    <div
-                      className="num first"
-                      onClick={() => {
-                        this.selectProject(0);
-                      }}
-                    >
-                      01
-                    </div>
-                    <div
-                      className="num"
-                      onClick={() => {
-                        this.selectProject(1);
-                      }}
-                    >
-                      02
-                    </div>
-                    <div
-                      className="num"
-                      onClick={() => {
-                        this.selectProject(2);
-                      }}
-                    >
-                      03
-                    </div>
-                    <div
-                      className="num"
-                      onClick={() => {
-                        this.selectProject(3);
-                      }}
-                    >
-                      04
-                    </div>
-                    <div
-                      className="num"
-                      onClick={() => {
-                        this.selectProject(4);
-                      }}
-                    >
-                      05
-                    </div>
-                    <div
-                      id="underline"
-                      style={
-                        this.state.loading
-                          ? { backgroundColor: "blue" }
-                          : this.lineAnim()
-                      }
-                    />
-                  </div>
-                </div>
+                </CSSTransition>
               </div>
             </div>
+            {this.state.project !== null && (
+              <ProjectNav
+                projNum={this.state.project}
+                data={this.state.data}
+                gridOn={this.state.gridToggle}
+                selectProject={this.selectProject}
+                toggleGrid={this.toggleGrid}
+              />
+            )}
           </div>
           {this.state.loading ? <div>loading</div> : this.renderImage()}
         </div>

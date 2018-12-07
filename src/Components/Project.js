@@ -26,6 +26,12 @@ class Project extends Component {
       return <RRH data={this.props.data} />;
     }
   };
+  componentDidMount() {
+    this.props.didMount(true);
+  }
+  componentWillUnmount() {
+    this.props.didMount(false);
+  }
   render() {
     return (
       <div id="project">

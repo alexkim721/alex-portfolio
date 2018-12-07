@@ -23,7 +23,8 @@ class Work extends Component {
       data: [],
       loading: true,
       scrollable: true,
-      onCaseStudy: false
+      onCaseStudy: false,
+      animation: true
     };
     this.boundScroll = this.wheelEvent.bind(this);
     // this.scroll
@@ -37,6 +38,14 @@ class Work extends Component {
       loading: false,
       project: 0
     });
+    if (
+      this.props.history.location.pathname.split("/").length > 2 &&
+      this.props.history.location.pathname.split("/")[2] !== ""
+    ) {
+      this.setState({
+        animation: false
+      });
+    }
   }
 
   reOrder() {
@@ -68,7 +77,7 @@ class Work extends Component {
       //add logic to change state
     }
 
-    if (prevState.project !== this.state.project && onCaseStudy) {
+    if (prevState.project !== this.state.project && this.state.animation) {
       const { mockup, imageStyle } = this.state.data[this.state.project][0];
       projectIntro({ mockup, imageStyle });
       projectOutro();
@@ -263,7 +272,7 @@ class Work extends Component {
   render() {
     return (
       <React.Fragment>
-        {console.log(this.state)}
+        {console.log(this.props)}
         {/* <div className="main">
             <div className="number">01</div>
             <div className="title">MyCourses</div>

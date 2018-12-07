@@ -18,13 +18,30 @@ class ProjectNav extends Component {
     return (
       <React.Fragment>
         <div className="container collapsed">
+          {console.log(this.props)}
           <div className="gridContainer">
             <div
               className="grid"
               onClick={() => {
                 this.props.toggleGrid();
               }}
-            />
+            >
+              <div
+                className={
+                  !this.props.gridOn
+                    ? "gridline first active"
+                    : "gridline first"
+                }
+              />
+              <div
+                className={!this.props.gridOn ? "gridline active" : "gridline"}
+              />
+              <div
+                className={
+                  !this.props.gridOn ? "gridline last active" : "gridline last"
+                }
+              />
+            </div>
           </div>
           <div className={this.props.gridOn ? "projects" : "projects hidden"}>
             <div

@@ -14,12 +14,12 @@ export const projectIntro = image => {
 const imageIntroAnim = src => {
   const image = document.querySelector(".mockup");
   const imagePath = require(`../images/${src.mockup}`);
-  TweenMax.fromTo(image, 0.4, { opacity: 1 }, { opacity: 0 });
-  TweenMax.fromTo(image, 0.4, { opacity: 0 }, { delay: 0.75, opacity: 1 });
+  TweenMax.fromTo(image, 0.3, { opacity: 1 }, { opacity: 0 });
+  TweenMax.fromTo(image, 0.3, { opacity: 0 }, { delay: 0.4, opacity: 1 });
 
   setTimeout(() => {
     image.src = imagePath;
-  }, 410);
+  }, 310);
 };
 
 export const projectOutro = () => {

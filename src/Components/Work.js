@@ -68,7 +68,7 @@ class Work extends Component {
       //add logic to change state
     }
 
-    if (prevState.project !== this.state.project) {
+    if (prevState.project !== this.state.project && onCaseStudy) {
       const { mockup, imageStyle } = this.state.data[this.state.project][0];
       projectIntro({ mockup, imageStyle });
       projectOutro();
@@ -206,7 +206,7 @@ class Work extends Component {
     if (slugs.includes(firstPart)) {
       return (
         <Project
-          data={this.state.data[slugs.indexOf(firstPart)][0]}
+          data={this.state.data && this.state.data[slugs.indexOf(firstPart)][0]}
           didMount={this.projectDidMount}
         />
       );

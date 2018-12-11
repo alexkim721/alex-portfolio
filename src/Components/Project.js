@@ -3,6 +3,8 @@ import Hid from "../Components/Projects/HiddenbutnotHiding";
 import MyCourses from "../Components/Projects/MyCourses";
 import "../css/project.css";
 import RRH from "./Projects/RRH";
+import AMAX from "./Projects/AMAX";
+import ACS from "./Projects/ACS";
 
 class Project extends Component {
   heroStyle = () => {
@@ -22,8 +24,12 @@ class Project extends Component {
       return <MyCourses data={this.props.data} />;
     } else if (this.props.data.title === "Hidden but not Hiding") {
       return <Hid data={this.props.data} />;
-    } else {
+    } else if (this.props.data.title === "RRH Hospital") {
       return <RRH data={this.props.data} />;
+    } else if (this.props.data.title === "Asian Culture Society") {
+      return <ACS data={this.props.data} />;
+    } else if (this.props.data.title === "AMAX") {
+      return <AMAX data={this.props.data} />;
     }
   };
   componentDidMount() {
@@ -49,14 +55,28 @@ class Project extends Component {
               <div className="title">{this.props.data.title}</div>
               <div className="desc">{this.props.data.fulldesc}</div>
               <div className="links">
-                <a
-                  className="link"
-                  href="../images/hid-deck.pdf"
-                  target="_blank"
-                  style={this.heroStyle()}
-                >
-                  Documentation
-                </a>
+                {this.props.data.documentation && (
+                  <a
+                    className="link"
+                    href={this.props.data.documentation}
+                    target="_blank"
+                    style={this.heroStyle()}
+                    rel="noopener noreferrer"
+                  >
+                    Documentation
+                  </a>
+                )}
+                {this.props.data.demo && (
+                  <a
+                    className="link"
+                    href={this.props.data.demo}
+                    target="_blank"
+                    style={this.heroStyle()}
+                    rel="noopener noreferrer"
+                  >
+                    Live Website
+                  </a>
+                )}
               </div>
             </div>
             <div className="right">

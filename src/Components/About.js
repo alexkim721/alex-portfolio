@@ -43,8 +43,9 @@ class About extends Component {
             <div className="contact">
               <div className="email">alexkim721@gmail.com</div>
               <div className="socialmedia">
-                <div className="sociallink fb" />
                 <div className="sociallink linkedin" />
+                <div className="sociallink drib" />
+                <div className="sociallink fb" />
                 <div className="sociallink git" />
               </div>
             </div>

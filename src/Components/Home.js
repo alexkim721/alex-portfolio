@@ -12,13 +12,16 @@ class Home extends Component {
             <div className="heroDesc">
               I am a UX/UI Designer with a passion for Development.
             </div>
+            <NavLink className="toWork" to="/work">
+              view projects
+            </NavLink>
           </div>
-          <div className="workButton">
+          {/* <div className="workButton">
             <NavLink className="toWork" to="/work">
               view projects
             </NavLink>
             <div className="arrow" />
-          </div>
+          </div> */}
         </div>
       </div>
     );

@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import Slider from "../Projects/Slider";
 
 class MyCourses extends Component {
-  componentDidMount() {
-    console.log(this.props);
-  }
+  componentDidMount() {}
   color = () => {
     const style = {
       color: this.props.data.color
@@ -205,7 +203,7 @@ class MyCourses extends Component {
             <img
               alt="Final Comps"
               src={require("../../images/MyCourses/final-screens.png")}
-              className="finalCompImg"
+              className="finalScreens"
             />
           </div>
           <div id="partfive" className="sections mainTextWidth">

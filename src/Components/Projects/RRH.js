@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 
 class RRH extends Component {
-  componentDidMount() {
-    console.log(this.props);
-  }
+  componentDidMount() {}
   color = () => {
     const style = {
       color: this.props.data.color
@@ -19,7 +17,7 @@ class RRH extends Component {
 
   render() {
     return (
-      <div className="main">
+      <div className="main" id="RRH">
         <div className="container">
           <div id="partone" className="sections mainTextWidth">
             <div className="projHeader">Problem Statement</div>
@@ -335,6 +333,7 @@ class RRH extends Component {
           <div className="singlecolumn" style={this.bgcolor()}>
             <img
               alt="boards"
+              class="finalScreens"
               src={require("../../images/RRH/final-comps.png")}
             />
           </div>

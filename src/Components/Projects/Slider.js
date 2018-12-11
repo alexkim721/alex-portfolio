@@ -27,7 +27,6 @@ class Slider extends React.Component {
   }
 
   renderSlider = () => {
-    console.log(this.state);
     return this.props.images.map(image => (
       <img
         alt={`sliderimg`}

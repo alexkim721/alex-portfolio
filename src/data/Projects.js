@@ -29,7 +29,8 @@ const Projects = [
       require("../images/MyCourses/Project 1 - Screens-06.png"),
       require("../images/MyCourses/Project 1 - Screens-12.png"),
       require("../images/MyCourses/Project 1 - Screens-13.png")
-    ]
+    ],
+    documentation: require("../images/MyCourses/web-deck.pdf")
   },
   {
     title: "RRH Hospital",
@@ -47,14 +48,17 @@ const Projects = [
   },
   {
     title: "Asian Culture Society",
-    desc: "The design and development of an on campus club website.",
+    desc:
+      "The design and development of a website for an on campus club website.",
     role: "WEB DEVELOPMENT • UI DESIGN",
     color: "#ff6249",
     order: 5,
     slug: "asian-culture-society",
     client: "RIT Asian Culture Society",
     duration: "Fall 2018",
-    mockup: "mycourses-mockup.png"
+    mockup: "acs-mockup.png",
+    fulldesc:
+      "The Asian Culture Society is a school club that focuses on promoting and sharing Asian culture with the student body at RIT. They needed a website that would effectively promote their brand and identity as a club as well as serve as a general hub for members to check for news and events as they come up. They also wanted a blog section to further interact with readers."
   },
   {
     title: "Hidden but not Hiding",
@@ -75,18 +79,23 @@ const Projects = [
     slider02: [
       require("../images/Hid/final-comps-06.png"),
       require("../images/Hid/final-comps-07.png")
-    ]
+    ],
+    documentation: require("../images/Hid/hid-deck.pdf")
   },
   {
     title: "AMAX",
-    desc: "The design and development of a furniture company based in Canada.",
+    desc:
+      "The design and development of a portfolio website for a furniture company based in Canada.",
     role: "WEB DEVELOPMENT • UI DESIGN",
     color: "#78191a",
     order: 4,
     slug: "amax",
     client: "AMAX Leather",
     duration: "Fall 2018",
-    mockup: "mycourses-mockup.png"
+    mockup: "amax-mockup.png",
+    fulldesc:
+      "AMAX is a furniture distribution company that creates high quality leather furniture for retailers to sell to the general public. The role I played was their web designer and developer, but I mostly developed the website, as they had a set layout in mind. The product they wanted a was a functioning website to serve as a portfolio of their products.",
+    demo: "https://amax-furniture.herokuapp.com/"
   }
 ];
 

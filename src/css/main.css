@@ -27,6 +27,9 @@
   align-self: center;
   transition: 0.2s;
 }
+.header .name:hover {
+  opacity: 0.6;
+}
 .header .navItems {
   display: flex;
   height: 100%;
@@ -39,6 +42,9 @@
   font-weight: 600;
   align-self: center;
   transition: 0.2s;
+}
+.header .navItems .navItem:hover {
+  opacity: 0.6;
 }
 .header .white {
   color: white !important;

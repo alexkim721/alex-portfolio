@@ -18,7 +18,6 @@ class ProjectNav extends Component {
     return (
       <React.Fragment>
         <div className="container collapsed">
-          {console.log(this.props)}
           <div className="gridContainer">
             <div
               className="grid"

@@ -11,7 +11,7 @@ import {
 } from "../utils/animation";
 import ProjectNav from "./ProjectNav";
 import ProjectNavExpanded from "./ProjectNavExpanded";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
 // import { TweenMax, Power3 } from "gsap";
 
 class Work extends Component {
@@ -229,7 +229,6 @@ class Work extends Component {
     ) {
       return <div>doesnt exist</div>;
     } else {
-      console.log(this.state.gridToggle);
       return (
         <div id="work">
           <div className="content">
@@ -281,7 +280,6 @@ class Work extends Component {
   render() {
     return (
       <React.Fragment>
-        {console.log(this.props)}
         {/* <div className="main">
             <div className="number">01</div>
             <div className="title">MyCourses</div>

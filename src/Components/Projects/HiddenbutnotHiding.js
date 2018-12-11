@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import Slider from "../Projects/Slider";
 
 class Hid extends Component {
-  componentDidMount() {
-    console.log(this.props);
-  }
+  componentDidMount() {}
   color = () => {
     const style = {
       color: this.props.data.color

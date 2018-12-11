@@ -89,12 +89,14 @@ class Header extends Component {
             >
               about
             </NavLink>
-            <NavLink
+            <a
               className={this.state.linksdark ? "navItem" : "navItem white"}
-              to=""
+              href={require("../images/resume.pdf")}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               resume
-            </NavLink>
+            </a>
           </div>
         </div>
       </div>

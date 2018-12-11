@@ -77,6 +77,25 @@
 #about .container .right .contact .socialmedia .sociallink {
   height: 20px;
   width: 20px;
-  background-color: cadetblue;
   margin-left: 20px;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.7;
+  transition: 0.2s;
+  cursor: pointer;
+}
+#about .container .right .contact .socialmedia .sociallink:hover {
+  opacity: 1;
+}
+#about .container .right .contact .socialmedia .li {
+  background-image: url("../images/linkedin.png");
+}
+#about .container .right .contact .socialmedia .drib {
+  background-image: url("../images/dribbble.png");
+}
+#about .container .right .contact .socialmedia .fb {
+  background-image: url("../images/fb.png");
+}
+#about .container .right .contact .socialmedia .git {
+  background-image: url("../images/github.png");
 }

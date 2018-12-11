@@ -21,7 +21,8 @@ class About extends Component {
                 copious amounts of food.
               </p>
               <p>
-                Like what you see? Send me a message on Dribbble and LinkedIn!
+                Like what you see? Shoot my an email at{" "}
+                <b>alexkim721@gmail.com</b>!
               </p>
             </div>
             <div className="quote">
@@ -43,10 +44,38 @@ class About extends Component {
             <div className="contact">
               <div className="email">alexkim721@gmail.com</div>
               <div className="socialmedia">
-                <div className="sociallink linkedin" />
-                <div className="sociallink drib" />
-                <div className="sociallink fb" />
-                <div className="sociallink git" />
+                <a
+                  href="https://www.linkedin.com/in/alex-seowon-kim/"
+                  className="sociallink li"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {" "}
+                </a>
+                <a
+                  href="https://dribbble.com/alex-seowon-kim"
+                  className="sociallink drib"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {" "}
+                </a>
+                <a
+                  href="https://www.facebook.com/alexkim721"
+                  className="sociallink fb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {" "}
+                </a>
+                <a
+                  href="https://github.com/alexkim721"
+                  className="sociallink git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {" "}
+                </a>
               </div>
             </div>
           </div>

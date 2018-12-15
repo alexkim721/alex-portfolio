@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../css/work.css";
+import "../css/main.css";
 import { NavLink, withRouter } from "react-router-dom";
 import Projects from "../data/Projects";
 import Project from "./Project";
@@ -123,10 +124,23 @@ class Work extends Component {
   };
   wheelEvent = event => {
     if (this.state.scrollable) {
-      if (event.deltaY > 75) {
-        this.countUp();
-      } else if (event.deltaY < -75) {
-        this.countDown();
+      console.log(event.deltaY);
+      if ("MozAppearance" in document.documentElement.style) {
+        if (event.deltaY > 0) {
+          console.log("scrolled down");
+          this.countUp();
+        } else if (event.deltaY < 0) {
+          console.log("scrolled up");
+          this.countDown();
+        }
+      } else {
+        if (event.deltaY > 75) {
+          console.log("scrolled down");
+          this.countUp();
+        } else if (event.deltaY < -75) {
+          console.log("scrolled up");
+          this.countDown();
+        }
       }
     }
   };
@@ -146,51 +160,93 @@ class Work extends Component {
   };
 
   renderProject = () => {
-    return (
-      <div
-        className="projectContainer"
-        style={{
-          marginTop: this.state.project * (window.innerHeight - 205) * -1
-        }}
-      >
-        {this.state.data.map(project => {
-          return (
-            <div
-              className={`project project${project[0].order}`}
-              key={`project${this.state.data.indexOf(project)}`}
-              style={
-                project[0].order === this.state.project + 2
-                  ? {
-                      marginTop: -240
-                    }
-                  : {}
-              }
-            >
-              <div className="number">{"0" + project[0].order}</div>
+    if (window.innerWidth <= 850) {
+      return (
+        <div
+          className="projectContainer"
+          style={{
+            marginTop: this.state.project * (window.innerHeight * 0.5) * -1
+          }}
+        >
+          {console.log("small")}
+          {this.state.data.map(project => {
+            return (
               <div
-                className={
-                  this.state.project + 1 === project[0].order
-                    ? "projectText active"
-                    : "projectText hide"
+                className={`project project${project[0].order}`}
+                key={`project${this.state.data.indexOf(project)}`}
+              >
+                <div className="number">{"0" + project[0].order}</div>
+                <div
+                  className={
+                    this.state.project + 1 === project[0].order
+                      ? "projectText active"
+                      : "projectText hide"
+                  }
+                >
+                  <div className="title">{project[0].title}</div>
+
+                  <div className="desc">{project[0].desc}</div>
+                  <div className="role">{project[0].role}</div>
+                  <NavLink
+                    className="button"
+                    to={`/work/${project[0].slug}`}
+                    style={{ backgroundColor: project[0].color }}
+                  >
+                    view project
+                  </NavLink>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      );
+    } else {
+      return (
+        <div
+          className="projectContainer"
+          style={{
+            marginTop: this.state.project * (window.innerHeight - 205) * -1
+          }}
+        >
+          {this.state.data.map(project => {
+            return (
+              <div
+                className={`project project${project[0].order}`}
+                key={`project${this.state.data.indexOf(project)}`}
+                style={
+                  project[0].order === this.state.project + 2
+                    ? {
+                        marginTop: (window.innerHeight - 205) * -1 + 400
+                      }
+                    : {}
                 }
               >
-                <div className="title">{project[0].title}</div>
-
-                <div className="desc">{project[0].desc}</div>
-                <div className="role">{project[0].role}</div>
-                <NavLink
-                  className="button"
-                  to={`/work/${project[0].slug}`}
-                  style={{ backgroundColor: project[0].color }}
+                <div className="number">{"0" + project[0].order}</div>
+                <div
+                  className={
+                    this.state.project + 1 === project[0].order
+                      ? "projectText active"
+                      : "projectText hide"
+                  }
                 >
-                  view project
-                </NavLink>
+                  <div className="title">{project[0].title}</div>
+
+                  <div className="desc">{project[0].desc}</div>
+                  <div className="role">{project[0].role}</div>
+                  <NavLink
+                    className="button"
+                    to={`/work/${project[0].slug}`}
+                    style={{ backgroundColor: project[0].color }}
+                  >
+                    view project
+                  </NavLink>
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
-    );
+            );
+          })}
+        </div>
+      );
+    }
   };
   renderImage = () => {
     let bgColor = {

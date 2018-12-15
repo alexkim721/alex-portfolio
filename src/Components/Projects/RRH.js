@@ -253,7 +253,7 @@ class RRH extends Component {
               </div>
             </div>
           </div>
-          <div className="twocolum">
+          <div className="twocolum reverse">
             <div className="text">
               <div className="subHeader">Patient Status</div>
               <div className="desc projp">
@@ -306,7 +306,7 @@ class RRH extends Component {
               </div>
             </div>
           </div>
-          <div className="twocolum">
+          <div className="twocolum reverse">
             <div className="text">
               <div className="subHeader">User Incentives</div>
               <div className="desc projp">
@@ -348,9 +348,23 @@ class RRH extends Component {
                 prototyping.
               </p>
               <p>
-                None of this would have been possible without my teammates
-                Madison Yocum and Victoria Bragg so swing by their portfolio to
-                see their work!
+                None of this would have been possible without my teammates{" "}
+                <a
+                  href="http://www.madisonyocum.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Madison Yocum
+                </a>{" "}
+                and{" "}
+                <a
+                  href="http://victoriabragg.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Victoria Bragg
+                </a>{" "}
+                so swing by their portfolio to see their work!
               </p>
             </div>
           </div>

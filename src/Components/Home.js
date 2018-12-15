@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "../css/home.css";
+import "../css/mobile.css";
 
 class Home extends Component {
   render() {

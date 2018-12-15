@@ -15,8 +15,39 @@ class Header extends Component {
   }
   componentDidMount() {
     document.addEventListener("wheel", this.boundScroll);
+    if (this.props.history.location.pathname === "/work") {
+      window.addEventListener("resize", () => {
+        if (
+          window.innerWidth <= 850 &&
+          this.props.history.location.pathname === "/work"
+        ) {
+          this.setState({
+            dark: false
+          });
+        } else {
+          this.setState({
+            dark: true
+          });
+        }
+      });
+    }
     this.onRouteChanged();
+    this.checkMobile();
   }
+  checkMobile = () => {
+    if (
+      window.innerWidth <= 850 &&
+      this.props.history.location.pathname === "/work"
+    ) {
+      this.setState({
+        dark: false
+      });
+    } else {
+      this.setState({
+        dark: true
+      });
+    }
+  };
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
       this.onRouteChanged();
@@ -72,6 +103,7 @@ class Header extends Component {
   render() {
     return (
       <div className={this.headerClassControler()}>
+        {console.log(this.props)}
         <div className="container">
           <NavLink className={this.state.dark ? "name" : "name white"} to="">
             Alexander Kim

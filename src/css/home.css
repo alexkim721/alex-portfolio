@@ -20,14 +20,14 @@
   text-align: center;
 }
 #home .container .heroContent h1 {
-  font-size: 40px;
+  font-size: 38px;
   font-weight: 700;
   color: white;
   margin-top: 50px;
 }
 #home .container .heroContent .heroDesc {
-  font-size: 20px;
-  margin-top: 20px;
+  font-size: 18px;
+  margin-top: 30px;
   color: white;
 }
 /* #home .container .workButton {
@@ -47,6 +47,7 @@
   padding: 20px 30px;
   font-weight: 500;
   transition: 0.2s;
+  font-size: 14px;
 }
 #home .container .heroContent .toWork:hover {
   color: rgb(49, 249, 141);

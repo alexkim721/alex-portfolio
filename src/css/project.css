@@ -11,7 +11,7 @@
 }
 #project .intro-container {
   background-color: #fafafa;
-  height: 520px;
+  height: 620px;
   margin-top: 100vh;
 }
 #project .intro {
@@ -20,7 +20,7 @@
   padding: 110px 0;
   align-self: center;
   display: flex;
-  height: 350px;
+  height: 400px;
   justify-content: space-between;
 }
 #project .intro .left {
@@ -31,12 +31,12 @@
   justify-content: space-between;
 }
 #project .intro .left .title {
-  font-size: 40px;
+  font-size: 38px;
   font-weight: 600;
 }
 #project .intro .left .desc {
-  line-height: 30px;
-  font-size: 16px;
+  line-height: 40px;
+  font-size: 14px;
 }
 #project .intro .left .links {
   margin-bottom: 18px;
@@ -48,6 +48,7 @@
   font-weight: 500;
   letter-spacing: 0.5px;
   border-radius: 5px;
+  font-size: 14px;
 }
 #project .intro .right {
   display: flex;
@@ -60,6 +61,10 @@
   font-weight: 600;
   letter-spacing: 0.5px;
   margin-bottom: 5px;
+  font-size: 14px;
+}
+#project .intro .right .item-content {
+  font-size: 14px;
 }
 
 /* Project Breakdown Styles */
@@ -72,25 +77,30 @@
   width: 700px;
 }
 #project .container .projHeader {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 600;
   margin-bottom: 50px;
 }
 
 #project .container .projp {
   line-height: 40px;
+  font-size: 14px;
   opacity: 0.8;
 }
 #project .container .projp p {
   margin-bottom: 30px;
 }
+#project .container .projp p a {
+  font-weight: 600;
+  text-decoration: none;
+}
 #project .container .subHeader {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   margin-bottom: 30px;
 }
 #project .container .coloredHeader {
-  font-size: 40px;
+  font-size: 38px;
   font-weight: 600;
   margin: 50px 0;
 }
@@ -105,6 +115,7 @@
 }
 #project .container .fourList .listItem {
   width: 45%;
+  margin-bottom: 30px;
 }
 #project .container .fourList .listItem .itemNum {
   position: absolute;
@@ -118,6 +129,7 @@
 #project .container .fourList .listItem .itemContent {
   line-height: 28px;
   opacity: 0.8;
+  font-size: 14px;
 }
 
 #project .container .sections {
@@ -213,11 +225,13 @@
 #project .container .iphoneMock .iphone {
   position: absolute;
   width: 100%;
+  z-index: 1;
 }
 #project .container .iphoneMock video.phone {
   width: 83%;
   margin-left: 1%;
   margin-top: -2%;
+  z-index: 2;
 }
 #project .construction {
   width: 100%;

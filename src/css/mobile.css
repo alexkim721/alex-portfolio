@@ -1,0 +1,247 @@
+@media screen and (max-width: 1280px) {
+  #home {
+    width: 90vw;
+  }
+
+  .header .container {
+    max-width: 90vw;
+  }
+
+  #about {
+    width: 90vw !important;
+  }
+  #about .container .left {
+    width: 40% !important;
+  }
+  #about .container .left .aboutheader {
+    font-size: 40px !important;
+  }
+  #about .container .left .quote .subHeader {
+    font-size: 20px !important;
+  }
+  #about .container .left .text p {
+    line-height: 30px !important;
+  }
+  #about .container .right {
+    width: Calc((40vw - ((10vw) / 2))) !important;
+  }
+  #about .container .right .contact .email {
+    font-size: 14px;
+  }
+  #about .container .right .contact .socialmedia .sociallink {
+    height: 15px !important;
+    width: 15px !important;
+  }
+
+  #work .main .projectContainer {
+    width: 50vw !important;
+  }
+  #work .footerNav .width {
+    width: 90vw !important;
+  }
+  #work .container.collapsed {
+    width: 90vw !important;
+  }
+  #work .container.collapsed .projects {
+    margin-right: Calc(40vw - 40px) !important;
+  }
+  #work .footerNav.large .container {
+    width: 50vw;
+  }
+  #work .footerNav.large .projects .num {
+    flex-wrap: wrap;
+  }
+  #work .footerNav .projTitle {
+    margin: 0 20px !important;
+    font-size: 24px !important;
+  }
+  #work .footerNav .projRole {
+    margin: 10px 0;
+  }
+
+  #project .intro {
+    width: 90% !important;
+  }
+  #project .container .fourgrid {
+    width: 90% !important;
+  }
+
+  #project .container .pitchVidRRH {
+    width: 90% !important;
+  }
+  #project .container .singlecolumn img.finalScreens {
+    width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #home .container {
+    height: Calc(100vh - 120px) !important;
+  }
+
+  #about .container .left .aboutheader {
+    font-size: 30px !important;
+  }
+  #about .container .left .text p {
+    margin-top: 20px !important;
+  }
+  #about .container .right .contact .email {
+    display: none !important;
+  }
+  #about .container .right .contact {
+    justify-content: flex-end !important;
+  }
+
+  #work {
+    display: flex;
+    flex-direction: column-reverse;
+    z-index: 1;
+  }
+  #work .main {
+    margin-bottom: 80px !important;
+  }
+  #work .content {
+    height: 50vh !important;
+    margin: 0 auto !important;
+    z-index: 2 !important;
+  }
+  #work .main .project {
+    height: 50vh !important;
+  }
+  #work .footerNav.small {
+    height: 80px !important;
+  }
+  #work .container.collapsed {
+    height: 80px !important;
+    margin-left: 5vw !important;
+  }
+  #work .container.collapsed .projects {
+    margin-right: 0 !important;
+  }
+  #work .image {
+    position: static !important;
+    width: 100% !important;
+    height: 50vh !important;
+  }
+  #work .image img {
+    margin-top: 20px !important;
+  }
+  #work .footerNav.large .container {
+    width: 90vw;
+  }
+  #work .main .projectContainer {
+    width: 90vw !important;
+    margin-left: 5vw !important;
+  }
+  #work .main .number {
+    margin: -120px 0 0 -5px !important;
+  }
+  #work .main .title {
+    margin-top: -40px;
+    margin-bottom: 20px !important;
+    font-size: 30px !important;
+  }
+
+  #project .container .mainTextWidth {
+    width: 90% !important;
+  }
+  #project .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh !important;
+  }
+  #project .hero .mockup {
+    width: 100%;
+  }
+  #project .intro {
+    display: flex;
+    flex-direction: column;
+    height: 70vh !important;
+    min-height: 750px;
+  }
+  #project .intro-container {
+    margin-top: 80vh !important;
+  }
+  #project .intro .left {
+    width: 100% !important;
+  }
+  #project .intro .right {
+    width: 100% !important;
+    flex-direction: row !important;
+    height: auto !important;
+  }
+  #project .intro .right .item {
+    width: 30%;
+  }
+  #project .container .fourList .listItem {
+    width: 100% !important;
+  }
+  #project .container .fourList .listItem .subHeader {
+    margin-left: 50px;
+  }
+  #project .container .fourList .listItem .itemNum {
+    margin-left: 0 !important;
+  }
+  #project .container .fourgrid {
+    flex-wrap: wrap;
+  }
+  #project .container .fourgrid .item {
+    width: 45% !important;
+  }
+  #project .container .singlecolumn img {
+    width: 100% !important;
+  }
+  #project .container .twocolum {
+    flex-direction: column-reverse;
+    width: 90% !important;
+  }
+  #project .container .twocolum.reverse {
+    flex-direction: column;
+  }
+  #project .container .twocolum .text {
+    width: 100% !important;
+  }
+  #project .container .iphoneMock {
+    margin: 120px 0 0 0 !important;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #about .container {
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    min-height: 500px !important;
+    margin-top: 120px !important;
+    margin-bottom: 20px;
+  }
+  #about .container .left {
+    width: 100% !important;
+  }
+  #about .container .right {
+    width: 100% !important;
+    position: absolute;
+    left: 0;
+  }
+  #about .container .right .contact {
+    margin-top: 0 !important;
+    margin-right: 5vw;
+  }
+  #about .container .right .picture {
+    display: none;
+  }
+
+  #work .container.collapsed .projects {
+    display: none !important;
+  }
+  #work .image {
+    height: 40vh !important;
+  }
+  #work .content {
+    height: 60vh !important;
+  }
+  #work .main .title {
+    margin-top: 0 !important;
+  }
+}

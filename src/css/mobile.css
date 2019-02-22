@@ -91,6 +91,7 @@
   #about .container .right .contact {
     justify-content: flex-end !important;
   }
+  
 
   #work {
     display: flex;
@@ -158,8 +159,8 @@
     display: flex;
     flex-direction: column;
     height: 70vh !important;
-    min-height: 750px;
   }
+  
   #project .intro-container {
     margin-top: 80vh !important;
   }
@@ -170,9 +171,11 @@
     width: 100% !important;
     flex-direction: row !important;
     height: auto !important;
+    justify-content: space-between
   }
   #project .intro .right .item {
     width: 30%;
+    margin-bottom: 0;
   }
   #project .container .fourList .listItem {
     width: 100% !important;

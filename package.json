@@ -15,7 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "echo Skip build on Heroku"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,5 +38,6 @@
   "bugs": {
     "url": "https://github.com/alexkim721/alex-portfolio/issues"
   },
-  "homepage": "https://github.com/alexkim721/alex-portfolio#readme"
+  "homepage": "https://github.com/alexkim721/alex-portfolio#readme",
+  "heroku-run-build-script": true
 }

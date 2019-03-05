@@ -4,7 +4,8 @@ import MyCourses from "../Components/Projects/MyCourses";
 import "../css/project.css";
 import RRH from "./Projects/RRH";
 import AMAX from "./Projects/AMAX";
-import ACS from "./Projects/ACS";
+//import ACS from "./Projects/ACS";
+import Ensemble from "./Projects/Ensemble";
 
 class Project extends Component {
   heroStyle = () => {
@@ -26,8 +27,8 @@ class Project extends Component {
       return <Hid data={this.props.data} />;
     } else if (this.props.data.title === "RRH Hospital") {
       return <RRH data={this.props.data} />;
-    } else if (this.props.data.title === "Asian Culture Society") {
-      return <ACS data={this.props.data} />;
+    } else if (this.props.data.title === "Ensemble") {
+      return <Ensemble data={this.props.data} />;
     } else if (this.props.data.title === "AMAX") {
       return <AMAX data={this.props.data} />;
     }

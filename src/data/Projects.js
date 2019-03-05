@@ -46,19 +46,34 @@ const Projects = [
       "Rochester Regional Health Hospital requested to do a collaborative project with RIT and my senior class was given the task of fulfilling their needs. They wanted an AR navigation system that would allow visitors to get to specific areas of the hospital with as little friction as possible. My team was called team ROAM and consisted of two other amazing designers: Madison Yocum and Victoria Bragg.",
     mockup: "rrh-mockup.png"
   },
+  // {
+  //   title: "Asian Culture Society",
+  //   desc:
+  //     "The design and development of a website for an on campus club website.",
+  //   role: "WEB DEVELOPMENT • UI DESIGN",
+  //   color: "#ff6249",
+  //   order: 4,
+  //   slug: "asian-culture-society",
+  //   client: "RIT Asian Culture Society",
+  //   duration: "Fall 2018",
+  //   mockup: "acs-mockup.png",
+  //   fulldesc:
+  //     "The Asian Culture Society is a school club that focuses on promoting and sharing Asian culture with the student body at RIT. They needed a website that would effectively promote their brand and identity as a club as well as serve as a general hub for members to check for news and events as they come up. They also wanted a blog section to further interact with readers."
+  // },
   {
-    title: "Asian Culture Society",
+    title: "Ensemble",
     desc:
-      "The design and development of a website for an on campus club website.",
-    role: "WEB DEVELOPMENT • UI DESIGN",
-    color: "#ff6249",
-    order: 5,
-    slug: "asian-culture-society",
-    client: "RIT Asian Culture Society",
+      "Ensemble is a platform designed for Instrument that allows users who are part of Leadership to perform and review performance reviews.",
+    role: "UX DESIGN • UI DESIGN",
+    color: "#4BB77A",
+    order: 2,
+    slug: "ensemble",
+    client: "Instrument",
     duration: "Fall 2018",
     mockup: "acs-mockup.png",
     fulldesc:
-      "The Asian Culture Society is a school club that focuses on promoting and sharing Asian culture with the student body at RIT. They needed a website that would effectively promote their brand and identity as a club as well as serve as a general hub for members to check for news and events as they come up. They also wanted a blog section to further interact with readers."
+      "Instrument is a creative agency with dozens of employees that need to be managed and communicated with. They wanted a universal platform that allowed employees access to hold their bi-yearly performance reviews. The class was split into groups of 2 to 3 and each group was required to focus on one of three branches of employee level: Admin, Leadership and Employee. My team was tasked with designing the Leadership branch.",
+    documentation: require("../images/MyCourses/web-deck.pdf")
   },
   {
     title: "Hidden but not Hiding",
@@ -66,7 +81,7 @@ const Projects = [
       "An interactive infographic that shows statistical information about the homeless population in the US.",
     role: "UX DESIGN • UI DESIGN",
     color: "#212121",
-    order: 2,
+    order: 4,
     slug: "hidden-but-not-hiding",
     client: "School Project",
     duration: "Spring 2017",
@@ -88,7 +103,7 @@ const Projects = [
       "The design and development of a portfolio website for a furniture company based in Canada.",
     role: "WEB DEVELOPMENT • UI DESIGN",
     color: "#78191a",
-    order: 4,
+    order: 5,
     slug: "amax",
     client: "AMAX Leather",
     duration: "Fall 2018",

@@ -70,10 +70,29 @@ const Projects = [
     slug: "ensemble",
     client: "Instrument",
     duration: "Fall 2018",
-    mockup: "acs-mockup.png",
+    mockup: "ensemble-mockup.png",
     fulldesc:
       "Instrument is a creative agency with dozens of employees that need to be managed and communicated with. They wanted a universal platform that allowed employees access to hold their bi-yearly performance reviews. The class was split into groups of 2 to 3 and each group was required to focus on one of three branches of employee level: Admin, Leadership and Employee. My team was tasked with designing the Leadership branch.",
-    documentation: require("../images/MyCourses/web-deck.pdf")
+    documentation: require("../images/Ensemble/ensemble-deck.pdf"),
+    slider01: [
+      require("../images/Ensemble/onboarding-01.png"),
+      require("../images/Ensemble/onboarding-02.png"),
+      require("../images/Ensemble/onboarding-03.png"),
+      require("../images/Ensemble/callouts.png")
+    ],
+    slider02: [
+      require("../images/Ensemble/home.png"),
+      require("../images/Ensemble/task-01.png"),
+      require("../images/Ensemble/task-02.png")
+    ],
+    slider03: [
+      require("../images/Ensemble/notif.png"),
+      require("../images/Ensemble/calendar.png")
+    ],
+    slider04: [
+      require("../images/Ensemble/emailer.png"),
+      require("../images/Ensemble/poster.png")
+    ]
   },
   {
     title: "Hidden but not Hiding",

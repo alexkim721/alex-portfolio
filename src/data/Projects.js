@@ -129,7 +129,7 @@ const Projects = [
     mockup: "amax-mockup.png",
     fulldesc:
       "AMAX is a furniture distribution company that creates high quality leather furniture for retailers to sell to the general public. The role I played was their web designer and developer, but I mostly developed the website, as they had a set layout in mind. The product they wanted a was a functioning website to serve as a portfolio of their products.",
-    demo: "https://amaxleather.com/"
+    demo: "http://amaxleather.com/"
   }
 ];
 

@@ -215,12 +215,12 @@ class Ensemble extends Component {
               </div>
             </div>
             <div className="ensImage">
-              <Slider images={this.props.data.slider03} />
+              <Slider images={this.props.data.slider02} />
             </div>
           </div>
           <div className="twocolum">
             <div className="ensImage">
-              <Slider images={this.props.data.slider01} />
+              <Slider images={this.props.data.slider03} />
             </div>
             <div className="text">
               <div className="subHeader">Alternative Indicators</div>

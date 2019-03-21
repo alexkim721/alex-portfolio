@@ -38,6 +38,5 @@
   "bugs": {
     "url": "https://github.com/alexkim721/alex-portfolio/issues"
   },
-  "homepage": "https://github.com/alexkim721/alex-portfolio#readme",
   "heroku-run-build-script": true
 }
